@@ -1,0 +1,14 @@
+{
+  "id": "minio",
+  "name": "Object storage (MinIO / S3)",
+  "version": "0.1.0",
+  "coreVersion": "^0.1.0",
+  "kind": "tool",
+  "provides": ["minio.Storage"],
+  "consumes": [],
+  "dependencies": [],
+  "permissions": [],
+  "routes": [],
+  "secrets": ["minio_access_key", "minio_secret_key"],
+  "compose": "compose.fragment.yml"
+}
