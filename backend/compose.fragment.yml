@@ -6,9 +6,9 @@ services:
     command: server /data --console-address ":9001"
     env_file:
       - ../Backend/.env
-    ports:
-      - "9000:9000"
-      - "9001:9001"
+    # internal-by-default (Fix-KIT-07): reached over the compose network as `minio:9000` — no host port
+    # published (the S3 API nor the 9001 console). Dev host access → add a port from
+    # PiKaOs-Docs/docs/architecture/ports.md, never hardcode. Prod exposure is a host-firewall decision.
     volumes:
       - miniodata:/data
     healthcheck:
